@@ -1,0 +1,13 @@
+---
+# python-passlib = htaccess module for pw generation
+# python-mysqldb = used for mysql_db und mysql_user 
+- name: bootstrap maschines
+  hosts: bootstrap_maschines
+  gather_facts: no
+  remote_user: admin
+  become: yes
+  become_method: sudo 
+  pre_tasks:
+    - raw: sudo apt-get -y install python python2.7 python-passlib python-apt
+      args:
+        executable: /bin/sh
