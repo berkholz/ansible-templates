@@ -1,0 +1,12 @@
+---
+- name: restart Icinga2
+  service: name=icinga2 state=restarted
+
+- name: restart npcd
+  service: name=npcd state=restarted
+
+- name: restart carbon-cache
+  service: name=carbon-cache.service state=restarted
+
+- name: restart grafana
+  service: name=grafana-server.service state=restarted
