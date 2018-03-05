@@ -1,0 +1,15 @@
+---
+##
+## tasks are defined here 
+##
+- name: template copy task
+  copy: src= dest= owner=root group=root mode=644
+
+- name: template create directory task
+  file: path= state=directory mode=750 recurse=yes owner=root group=root
+
+- name: template for templating files
+  template: path= dest= 
+
+- name: template for installing packages via apt
+  apt: 

@@ -1,0 +1,5 @@
+# this defines default variables for this role.
+mail: "{{ admin_mail | default('root@localhost') }}"
+apt:
+  reboot: true
+  upgrade: true
