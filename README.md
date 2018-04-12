@@ -8,10 +8,10 @@ You can choose between:
 
 # How to call non-multi-environments
 ```
-ansible-playbook plyabook.ýml
+ansible-playbook yourPlaybook.yml
 ```
 
 # How to call multi-environment plays
 ``` 
-ansible-playbook -i development playbook.yml
+ansible-playbook -i inventories/development yourPlaybook.yml
 ```
