@@ -1,0 +1,26 @@
+---
+- name: xenserver setup
+  hosts: all_xenserver
+  gather_facts: yes
+  remote_user: root
+  #become: yes
+  #become_method: sudo
+  vars:
+    monitoring_allowed_hosts:
+      - 192.168.23.1
+      - 192.168.23.2
+      - 192.168.23.3
+  tasks: 
+    - name: simple service action on a node
+      service: name=iptables.service state=started
+    - name: simple service action on a node
+      service: 
+        name: iptables.service 
+        enabled: yes
+    - name: simple installation of a package
+      yum: name=screen state=latest
+  handlers:
+    - name: restart iptables
+      service: name=iptables state=restarted 
+      
+ 

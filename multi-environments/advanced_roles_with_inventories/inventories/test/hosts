@@ -1,0 +1,25 @@
+###
+### single machines
+###
+localhost ansible_connection=local
+
+
+###
+### group of groups
+###
+[all_xenserver:children]
+xenserver_machines_prod
+xenserver_machines_test
+
+
+###
+### atomic groups
+###
+[xenserver_machines_prod]
+xenserver01.localdomain
+xenserver02.localdomain
+
+[xenserver_machines_test]
+xenserver03.localdomain
+xenserver04.localdomain
+

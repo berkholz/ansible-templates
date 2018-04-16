@@ -1,4 +1,0 @@
-Defaults env_keep=SSH_AUTH_SOCK
-
-# admin_user have to be defined in some variable definition, e.g. group_vars, host_vars etc.
-{{ admin_user }} ALL = NOPASSWD: ALL

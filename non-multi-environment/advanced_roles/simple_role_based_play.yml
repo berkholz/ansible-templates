@@ -1,0 +1,10 @@
+---
+- name: simple play with roles
+  hosts: all_xenserver
+  gather_facts: yes
+  remote_user: root
+  #become: yes
+  #become_method: sudo 
+  
+  roles: 
+    - TEMPLATE_ROLE

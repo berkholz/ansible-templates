@@ -1,0 +1,20 @@
+---
+- name: simple file copy action
+  copy: 
+    src: testfile.txt
+    dest: /tmp/testfile.txt
+    mode: 644
+    owner: root
+  notify: restart iptables
+
+- name: simple template action 
+  template: 
+    src: template.txt
+    dest: /tmp/template.txt
+    mode: 644
+    owner: root
+    group: root
+  notify: 
+    - restart iptables
+    - restart sshd
+
